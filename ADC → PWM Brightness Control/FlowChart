@@ -1,0 +1,17 @@
+START
+  │
+  ▼
+Configure Pin 9 Output
+  │
+  ▼
+Read ADC Value (A0)
+  │
+  ▼
+Map ADC (0-1023)
+to PWM (0-255)
+  │
+  ▼
+Output PWM to LED
+  │
+  ▼
+Repeat
