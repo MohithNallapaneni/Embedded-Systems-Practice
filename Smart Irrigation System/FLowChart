@@ -1,0 +1,56 @@
+START
+  │
+  ▼
+Initialize Hardware
+(Serial, Pump, Sensors)
+  │
+  ▼
+Read Sensors
+- Moisture
+- Rain
+- Manual Switch
+  │
+  ▼
+Current State?
+  │
+  ├───────────────┬────────────────┬───────────────┐
+  ▼               ▼                ▼
+AUTOMATIC       RAIN           MANUAL
+  │               │                │
+  │               │                │
+  ▼               ▼                ▼
+
+Moisture      Pump OFF       Pump ON
+< Threshold?     │                │
+  │              │                │
+ ┌┴┐             │                │
+ │ │             │                │
+Yes No           │                │
+ │   │           │                │
+ ▼   ▼           │                │
+Pump Pump        │                │
+ ON   OFF        │                │
+ │               │                │
+ ▼               ▼                ▼
+
+Rain?         Rain Stop?    Manual OFF?
+ │               │                │
+Yes              Yes              Yes
+ │               │                │
+ ▼               ▼                ▼
+RAIN         AUTOMATIC      AUTOMATIC
+
+Manual ON?
+ │
+Yes
+ │
+ ▼
+MANUAL
+
+  │
+  ▼
+Wait 1 Second
+(millis())
+  │
+  ▼
+Repeat
